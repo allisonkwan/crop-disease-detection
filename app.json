@@ -1,0 +1,12 @@
+{
+  "name": "ReactNativeCropApp",
+  "displayName": "ReactNativeCropApp",
+  "expo": {
+    "name": "ReactNativeCropApp",
+    "slug": "ReactNativeCropApp",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
