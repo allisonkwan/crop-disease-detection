@@ -1,7 +1,8 @@
 
 import React from 'react';
 import { StyleSheet, Text, View, Image, Button} from 'react-native';
-import * as ImagePicker from 'react-native-image-picker';
+// import * as ImagePicker from 'react-native-image-picker';
+import * as ImagePicker from 'expo-image-picker';
 
 export default class App extends React.Component {
     state = {
@@ -11,7 +12,7 @@ export default class App extends React.Component {
         const options = {
             noData: true,
         };
-        ImagePicker.launchImageLibrary(options, (response) =>{
+        ImagePicker.launchImageLibraryAsync(options, (response) =>{
             // console.log("response",response);
             if (response.uri) {
                 this.setState({ photo: response });
