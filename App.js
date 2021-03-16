@@ -8,16 +8,12 @@ export default class App extends React.Component {
     state = {
         photo: null,
     }
-    handleChoosePhoto = () => {
+    handleChoosePhoto = async () => {
         const options = {
             noData: true,
         };
-        ImagePicker.launchImageLibraryAsync(options, (response) =>{
-            // console.log("response",response);
-            if (response.uri) {
-                this.setState({ photo: response });
-            }
-        });
+        let image = await ImagePicker.launchImageLibraryAsync(options);
+        this.setState({photo: image.uri})
     };
 
     render() {
@@ -31,7 +27,7 @@ export default class App extends React.Component {
               </View>
               {photo && (
                   <Image
-                      source={{ uri: photo.uri }}
+                      source={{ uri: photo }}
                       style={{width: 180, height: 200 }}
                   />
               )}
@@ -70,8 +66,8 @@ const styles = StyleSheet.create({ // <View style={styles.container}>
     },
     gray: {
         backgroundColor: '#BEBEBE',
-        top: 180,
-        left: 65,
+        top: 165,
+        left: 70,
         width: 180,
         height: 200,
         position: 'absolute'
