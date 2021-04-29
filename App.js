@@ -1,8 +1,9 @@
 
 import React from 'react';
 import { StyleSheet, Text, View, Image, Button} from 'react-native';
-// import * as ImagePicker from 'react-native-image-picker';
 import * as ImagePicker from 'expo-image-picker';
+import * as tf from '@tensorflow/tfjs';
+import { fetch } from '@tensorflow/tfjs-react-native'
 
 export default class App extends React.Component {
     state = {
